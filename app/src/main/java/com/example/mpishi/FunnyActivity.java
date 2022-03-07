@@ -25,7 +25,7 @@ public class FunnyActivity extends AppCompatActivity {
     ArrayList<DataModel> dataModelArrayList = new ArrayList<>();
     DataAdapter dataAdapter;
 
-    public static final  String API_KEY = "FVmvLAu8KUy58SDPbEDCE61Cs1UH5UrC";//API Key
+    public static final  String API_KEY = "N5cLjjjk65LMfdc3muilgNZUhU8TpV12";//API Key
     public static final String BASE_URL = "https://api.giphy.com/v1/gifs/trending?api_key=";
 
     String url = BASE_URL+API_KEY;
