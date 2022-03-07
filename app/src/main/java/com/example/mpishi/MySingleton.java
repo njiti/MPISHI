@@ -1,20 +1,27 @@
 package com.example.mpishi;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.util.LruCache;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
+
+import kotlin.reflect.jvm.internal.impl.descriptors.Visibilities;
 
 public class MySingleton {
     private static MySingleton instance;
     private RequestQueue requestQueue;
+    private ImageLoader imageLoader;
     private static Context ctx;
 
     private  MySingleton(Context context){
         ctx = context;
         requestQueue = getRequestQueue();
-    }
+
+   }
 
     //Creating single instance
     public static MySingleton getInstance(Context context){
@@ -27,6 +34,8 @@ public class MySingleton {
     private RequestQueue getRequestQueue(){
 
         if(requestQueue==null){
+            //getApplicationContext() is key, it keeps you from leaking the
+            //Activity or BroadcastReceiver if someone passes one in.
             requestQueue = Volley.newRequestQueue(ctx.getApplicationContext());
         }
 
@@ -36,6 +45,9 @@ public class MySingleton {
     //To add the fetched objects to the request queue
     public <T> void addToRequestQueue(Request<T> req){
         getRequestQueue().add(req);
+    }
+    public ImageLoader getImageLoader(){
+        return imageLoader;
     }
 }
 
