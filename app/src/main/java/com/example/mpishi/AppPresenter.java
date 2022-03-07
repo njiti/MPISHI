@@ -10,10 +10,11 @@ import retrofit2.Response;
 public class AppPresenter {
     private AppView view;
 
-    public class AppPresenter(AppView view){
+
+    public class AppPresenter (AppView view){
         this.view = view;
     }
-    void getMeals() {
+    void getAppData() {
 
         view.showLoading();
 
