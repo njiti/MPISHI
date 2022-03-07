@@ -46,8 +46,17 @@ dependencies {
 
     //Volley dependency
     implementation"com.android.volley:volley:1.2.1"
+    //picasso image loader
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    //OkHttpInterceptor
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.2.1'
+    implementation("com.squareup.okhttp3:okhttp:4.2.1")
 
     //Glide dependency
     annotationProcessor "com.github.bumptech.glide:compiler:4.12.0"
     implementation 'com.github.bumptech.glide:glide:4.12.0'
+    //noninspection GradleDependency
+    implementation 'com.jakewharton:butterknife:10.2.3'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
+
 }
