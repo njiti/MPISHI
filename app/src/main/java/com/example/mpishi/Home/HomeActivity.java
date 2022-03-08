@@ -1,19 +1,20 @@
-package com.example.mpishi;
+package com.example.mpishi.Home;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.mpishi.R;
+
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class HomeActivity extends AppCompatActivity implements AppView{
+public class HomeActivity extends AppCompatActivity implements AppView {
 
     @BindView(R.id.viewPageHeader) ViewPager viewPagerAppData;
     @BindView(R.id.recyclerCategory) RecyclerView recyclerViewCategory;

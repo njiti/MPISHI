@@ -1,13 +1,14 @@
-package com.example.mpishi;
+package com.example.mpishi.User;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.mpishi.R;
+import com.example.mpishi.Tutorials.ShortActivity;
 import com.google.android.material.button.MaterialButton;
 
 public class SignupActivity extends AppCompatActivity {
@@ -24,7 +25,7 @@ public class SignupActivity extends AppCompatActivity {
         loginbtn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
-                startActivity(new Intent(SignupActivity.this,ShortActivity.class));
+                startActivity(new Intent(SignupActivity.this, ShortActivity.class));
             }
         });
     }

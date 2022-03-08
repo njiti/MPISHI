@@ -1,18 +1,17 @@
-package com.example.mpishi;
+package com.example.mpishi.Funny;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.mpishi.R;
 
-import java.nio.file.attribute.FileTime;
 import java.util.ArrayList;
 
 public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder>{
@@ -65,14 +64,11 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder>{
             super(itemView);
             imageView = itemView.findViewById(R.id.imageView2);
 
-            itemView.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
-                    if(onItemClickListener!=null){
-                        int position = getAdapterPosition();
-                        if(position!=RecyclerView.NO_POSITION){
-                            onItemClickListener.onItemClick(position);
-                        }
+            itemView.setOnClickListener(v -> {
+                if(onItemClickListener!=null){
+                    int position = getAdapterPosition();
+                    if(position!=RecyclerView.NO_POSITION){
+                        onItemClickListener.onItemClick(position);
                     }
                 }
             });

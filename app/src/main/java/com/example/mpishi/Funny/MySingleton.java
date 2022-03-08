@@ -1,15 +1,11 @@
-package com.example.mpishi;
+package com.example.mpishi.Funny;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.util.LruCache;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
-
-import kotlin.reflect.jvm.internal.impl.descriptors.Visibilities;
 
 public class MySingleton {
     private static MySingleton instance;

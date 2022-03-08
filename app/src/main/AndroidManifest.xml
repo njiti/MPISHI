@@ -11,8 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MPISHI">
-        <!-- this is the searchable activity; it performs searches -->
-        <activity android:name=".SearchActivity"
+        <!-- this is the search activity; it performs searches -->
+        <activity android:name=".Searchable.SearchActivity"
             android:launchMode="singleTop"
             android:exported="true">
             <intent-filter>

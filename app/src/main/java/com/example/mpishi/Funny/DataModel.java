@@ -1,4 +1,4 @@
-package com.example.mpishi;
+package com.example.mpishi.Funny;
 
 public class DataModel {
     private String imageUrl;

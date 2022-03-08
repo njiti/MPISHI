@@ -1,12 +1,13 @@
-package com.example.mpishi;
+package com.example.mpishi.Home;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
-import com.squareup.picasso.Picasso;
+
+import com.example.mpishi.R;
+
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
@@ -41,11 +42,11 @@ public class HomeAdapter extends PagerAdapter {
                 false
         );
 
-        ImageView mealThumb = View.findViewById(R.id.mealthumb);
+        //ImageView mealThumb = (ImageView).findViewById(R.id.mealthumb);
         TextView mealName = view.findViewById(R.id.mealName);
 
         String strMealThumb = meals.get(position).getStrMealThumb();
-        Picasso.get().load(strMealThumb).into(mealThumb);
+        //Picasso.get().load(strMealThumb).into(mealThumb);
 
         String strMealName = meals.get(position).getStrMeal();
         mealName.setText(strMealName);

@@ -1,4 +1,4 @@
-package com.example.mpishi;
+package com.example.mpishi.Tutorials;
 
 import android.content.Context;
 import android.net.Uri;
@@ -7,6 +7,8 @@ import android.widget.MediaController;
 import android.widget.VideoView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.mpishi.R;
 
 public class ShortActivity extends AppCompatActivity {
 
