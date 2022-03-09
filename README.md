@@ -16,32 +16,30 @@ Android Developer & Intelli J
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+You will first need to download the android IDE ,
 
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
+fork project and start it there
 
 ```
-until finished
+Android Studion: https://developer.android.com/studio
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+or download the intellij IDE, and add the app development dependency
+
+```
+Itelli J: https://www.jetbrains.com/idea/download/#section=windows
+```
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+The tests do not need an emulator or device and ca essentially run on the IDE's terminal
 
 ### Break down into end to end tests
 
-Explain what these tests test and why
+The tests are essentially for making sure that key functions of the App are working
 
 ```
-Give an example
+ exampleTests
 ```
 
 ### And coding style tests
@@ -54,7 +52,7 @@ Give an example
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+To deploy on a live system you will either need to use a physical device, or an emulator: this case a phone of either choice is applicable.
 
 ## Built With
 
