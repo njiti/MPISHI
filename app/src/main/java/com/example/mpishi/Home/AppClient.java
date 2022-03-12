@@ -10,7 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class AppClient {
 
-    public static final String BASEURL = "www.themealdb.com/api/json/v1/1/search.php?s=";
+    public static final String BASEURL = "www.themealdb.com/api/json/v1/1/";
 
     public static Retrofit getAppClient(){
         return new Retrofit.Builder().baseUrl(BASEURL)
@@ -19,7 +19,7 @@ public class AppClient {
                 .build();
     }
     private static Interceptor provideLoggingInterceptor(){
-        return new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.level.BODY);
+        return new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY);
     }
     private static OkHttpClient provideOkHttp(){
         return new OkHttpClient.Builder()

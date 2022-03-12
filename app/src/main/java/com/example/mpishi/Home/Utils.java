@@ -1,22 +1,20 @@
 package com.example.mpishi.Home;
 
-import android.app.AlertDialog;
 import android.content.Context;
 
-import com.example.mpishi.Home.AppApi;
-import com.example.mpishi.Home.AppClient;
+import androidx.appcompat.app.AlertDialog;
 
 public class Utils {
 
-    public static AppApi getApi(){
+    public static AppApi getApi() {
         return AppClient.getAppClient().create(AppApi.class);
     }
 
-    public static AlertDialog showDialogMessage(Context context, String title, String message){
+    public static AlertDialog showDialogMessage(Context context, String title, String message) {
         AlertDialog alertDialog = new AlertDialog.Builder(context).setTitle(title).setMessage(message).show();
-            if (alertDialog.isShowing()){
-                alertDialog.cancel();
-            }
-            return alertDialog;
+        if (alertDialog.isShowing()) {
+            alertDialog.cancel();
+        }
+        return alertDialog;
     }
 }

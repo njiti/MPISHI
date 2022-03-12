@@ -5,7 +5,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 public interface AppApi {
-    @GET("latest.php")
+    @GET("random.php")
     Call<AppData> getAppData();
 
     @GET("categories.php")
@@ -15,5 +15,5 @@ public interface AppApi {
     Call<AppData> getMealByCategory(@Query("c") String category);
 
     @GET("search.php")
-    Call<AppData> getAppData(@Query("c") String category);
+    Call<AppData> getMealByName(@Query("c") String mealsName);
 }

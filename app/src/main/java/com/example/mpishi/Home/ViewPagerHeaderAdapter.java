@@ -1,6 +1,7 @@
 package com.example.mpishi.Home;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,48 +9,52 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.mpishi.R;
-import com.squareup.picasso.Picasso;
 
-import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class HomeAdapter extends PagerAdapter {
+public class ViewPagerHeaderAdapter extends PagerAdapter {
+
     private List<AppData.Meal> meals;
     private Context context;
     private static ClickListener clickListener;
 
-    public HomeAdapter(List<AppData.Meal> meals, Context context){
+    public ViewPagerHeaderAdapter(List<AppData.Meal> meals, Context context) {
         this.meals = meals;
         this.context = context;
     }
-    public void setOnItemClickListener(ClickListener clickListener){
-        HomeAdapter.clickListener = clickListener;
+
+    public void setOnItemClickListener(ClickListener clickListener) {
+        ViewPagerHeaderAdapter.clickListener = clickListener;
     }
+
     @Override
-    public int getCount(){
+    public int getCount() {
         return meals.size();
     }
 
     @Override
-    public boolean isViewFromObject(@NonNull View view, @NonNull Object o){
+    public boolean isViewFromObject(@NonNull View view, @NonNull Object o) {
         return view.equals(o);
     }
+
     @NonNull
-    public Object instatiateItem(@NonNull ViewGroup container, int position){
+    @Override
+    public Object instantiateItem(@NonNull ViewGroup container, int position) {
         View view = LayoutInflater.from(context).inflate(
                 R.layout.item_view_pager_header,
                 container,
                 false
         );
 
-        //ImageView mealThumb = (ImageView).findViewById(R.id.mealthumb);
+        ImageView mealThumb = view.findViewById(R.id.mealThumb);
         TextView mealName = view.findViewById(R.id.mealName);
 
         String strMealThumb = meals.get(position).getStrMealThumb();
-        ImageView mealThumb = null;
-        Picasso.get().load(strMealThumb).into((ImageView) null);
+        Picasso.get().load(strMealThumb).into(mealThumb);
 
         String strMealName = meals.get(position).getStrMeal();
         mealName.setText(strMealName);
@@ -63,9 +68,6 @@ public class HomeAdapter extends PagerAdapter {
     @Override
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
         container.removeView((View)object);
-    }
-
-    public void notifyDatasetChanged() {
     }
 
     public interface ClickListener {

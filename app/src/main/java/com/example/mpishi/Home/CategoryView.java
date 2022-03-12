@@ -4,12 +4,9 @@ import com.example.mpishi.Home.AppData;
 
 import java.util.List;
 
-import butterknife.internal.Utils;
-
-public interface AppView {
+public interface CategoryView {
     void showLoading();
     void hideLoading();
-    void setAppData(List<AppData.Meal> meal);
-    void setCategory(List<Categories.Category> category);
+    void setMeals(List<AppData.Meal> meals);
     void onErrorLoading(String message);
 }

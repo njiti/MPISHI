@@ -40,6 +40,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.5.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    implementation 'com.android.car.ui:car-ui-lib:2.0.0'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
@@ -52,11 +53,24 @@ dependencies {
     implementation 'com.squareup.okhttp3:logging-interceptor:4.2.1'
     implementation("com.squareup.okhttp3:okhttp:4.2.1")
 
+    //room database
+    implementation 'androidx.room:room-runtime:2.4.2'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    annotationProcessor 'androidx.room:room-compiler:2.4.2'
+
+    implementation 'com.facebook.shimmer:shimmer:0.4.0'
+
     //Glide dependency
     annotationProcessor "com.github.bumptech.glide:compiler:4.12.0"
     implementation 'com.github.bumptech.glide:glide:4.12.0'
     //noninspection GradleDependency
     implementation 'com.jakewharton:butterknife:10.2.3'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
+    //
+    def OkHttpVersion = "4.2.1"
+    implementation("com.squareup.okhttp3:okhttp:$OkHttpVersion")
+
+    //Ads
+    implementation 'com.google.android.gms:play-services-ads:20.6.0'
 
 }

@@ -2,4 +2,13 @@
 <resources>
     <item name="mealthumb" type="id" />
     <item name="mealName" type="id" />
+    <item name="favorite" type="id" />
+    <item name="source" type="id" />
+    <item name="youtube" type="id" />
+    <item name="measure" type="id" />
+    <item name="ingredient" type="id" />
+    <item name="instructions" type="id" />
+    <item name="country" type="id" />
+    <item name="category" type="id" />
+    <item name="collapsing_toolbar" type="id" />
 </resources>
