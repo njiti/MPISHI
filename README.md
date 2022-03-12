@@ -2,9 +2,13 @@
 
 This is an app aimed at helping people with step to step preparation of meals
 
+![a chef cooking!](https://resources.workable.com/wp-content/uploads/2017/07/shutterstock_149437304.jpg)
+
 ## Getting Started
 
 Fork project, or copy project and start it on the IDE of your choice you can then start it on the emulator of your choice. Or on a phone in debug mode
+
+![Project cloning!](https://www.howtogeek.com/wp-content/uploads/2019/12/Copy-repo-URL-to-clipboard.png?trim=1,1&bg-color=000&pad=1,1)
 
 ### Prerequisites
 
@@ -17,13 +21,14 @@ Android Developer & Intelli J
 ### Installing
 
 You will first need to download the android IDE ,
+![Android Studio Download!](https://techvidvan.com/tutorials/wp-content/uploads/sites/2/2021/06/Android-Installation_2.png)
 
 fork project and start it there
 
 ```
 Android Studion: https://developer.android.com/studio
 ```
-
+![Intelli J Download!](https://static.javatpoint.com/tutorial/kafka/images/installing-intellij-idea.png)
 or download the intellij IDE, and add the app development dependency
 
 ```
