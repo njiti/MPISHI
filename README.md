@@ -2,6 +2,8 @@
 
 This is an app aimed at helping people with step to step preparation of meals
 
+https://resources.workable.com/wp-content/uploads/2017/07/shutterstock_149437304.jpg
+
 ## Getting Started
 
 Fork project, or copy project and start it on the IDE of your choice you can then start it on the emulator of your choice. Or on a phone in debug mode
