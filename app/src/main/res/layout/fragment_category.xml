@@ -27,8 +27,7 @@
                 android:layout_height="160dp"
                 android:layout_margin="12dp"
                 app:cardCornerRadius="10dp"
-                app:cardBackgroundColor="@color/orange"
-                android:foreground="">
+                app:cardBackgroundColor="@color/orange">
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">

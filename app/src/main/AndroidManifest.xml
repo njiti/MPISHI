@@ -19,10 +19,26 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Home.CategoryActivity"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait"
+            android:label="Category"/>
+        <activity
+            android:name=".Home.DetailActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".Home.FavouriteActivity"
+            android:theme="@style/AppTheme"
+            android:label="Favorite"/>
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-7622707640153634~8677495206"/>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

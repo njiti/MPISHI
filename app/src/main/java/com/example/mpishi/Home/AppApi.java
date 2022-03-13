@@ -9,11 +9,11 @@ public interface AppApi {
     Call<AppData> getAppData();
 
     @GET("categories.php")
-    Call<AppData> getCategories();
+    Call<Categories> getCategories();
 
     @GET("filter.php")
     Call<AppData> getMealByCategory(@Query("c") String category);
 
     @GET("search.php")
-    Call<AppData> getMealByName(@Query("c") String mealsName);
+    Call<AppData> getMealByName(@Query("s") String mealName);
 }

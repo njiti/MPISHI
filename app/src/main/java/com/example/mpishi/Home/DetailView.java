@@ -1,8 +1,6 @@
 package com.example.mpishi.Home;
 
-import com.example.mpishi.Home.AppData;
-
-public class DetailView {
+public interface DetailView {
     void showLoading();
     void hideLoading();
     void setMeal(AppData.Meal meal);

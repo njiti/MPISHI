@@ -1,26 +1,24 @@
 package com.example.mpishi.Home;
 
+import static com.example.mpishi.Home.HomeActivity.EXTRA_DETAIL;
+
 import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import com.example.mpishi.R;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.ViewCompat;
 
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
+import com.example.mpishi.R;
 import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
@@ -29,7 +27,7 @@ import com.squareup.picasso.Picasso;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class DetailActivity extends AppCompatActivity{
+public class DetailActivity extends AppCompatActivity implements DetailView{
     @BindView(R.id.toolbar)
     Toolbar toolbar;
 
@@ -66,6 +64,13 @@ public class DetailActivity extends AppCompatActivity{
     @BindView(R.id.source)
     TextView source;
 
+    private FavouriteRepository repository;
+    private AppData.Meal meal;
+    MenuItem favouriteItem;
+    String strMealName;
+
+    private InterstitialAd mInterstitialAd;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,10 +87,6 @@ public class DetailActivity extends AppCompatActivity{
         DetailPresenter presenter = new DetailPresenter(this);
         presenter.getMealById(strMealName);
 
-        mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId(getResources().getString(R.string.interstitial_ads_id));
-        mInterstitialAd.loadAd(new AdRequest.Builder().build());
-
     }
 
     private void setupActionBar() {
@@ -98,18 +99,18 @@ public class DetailActivity extends AppCompatActivity{
         }
     }
 
-    void setupColorActionBarIcon(Drawable favoriteItemColor) {
+    void setupColorActionBarIcon(Drawable favouriteItemColor) {
         appBarLayout.addOnOffsetChangedListener((appBarLayout, verticalOffset) -> {
             if ((collapsingToolbarLayout.getHeight() + verticalOffset) < (2 * ViewCompat.getMinimumHeight(collapsingToolbarLayout))) {
                 if (toolbar.getNavigationIcon() != null)
                     toolbar.getNavigationIcon().setColorFilter(getResources().getColor(R.color.orange), PorterDuff.Mode.SRC_ATOP);
-                favoriteItemColor.mutate().setColorFilter(getResources().getColor(R.color.orange),
+                favouriteItemColor.mutate().setColorFilter(getResources().getColor(R.color.orange),
                         PorterDuff.Mode.SRC_ATOP);
 
             } else {
                 if (toolbar.getNavigationIcon() != null)
                     toolbar.getNavigationIcon().setColorFilter(getResources().getColor(R.color.white), PorterDuff.Mode.SRC_ATOP);
-                favoriteItemColor.mutate().setColorFilter(getResources().getColor(R.color.white),
+                favouriteItemColor.mutate().setColorFilter(getResources().getColor(R.color.white),
                         PorterDuff.Mode.SRC_ATOP);
             }
         });
@@ -118,9 +119,9 @@ public class DetailActivity extends AppCompatActivity{
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_detail, menu);
-        MenuItem favoriteItem = menu.findItem(R.id.favorite);
-        Drawable favoriteItemColor = favoriteItem.getIcon();
-        setupColorActionBarIcon(favoriteItemColor);
+        MenuItem favouriteItem = menu.findItem(R.id.favorite);
+        Drawable favouriteItemColor = favouriteItem.getIcon();
+        setupColorActionBarIcon(favouriteItemColor);
         return true;
     }
 
@@ -135,30 +136,30 @@ public class DetailActivity extends AppCompatActivity{
         }
     }
 
-    private void addOrRemoveToFavorite() {
-        if (isFavorite()) {
+    private void addOrRemoveToFavourite() {
+        if (isFavourite()) {
             repository.delete(meal.getStrMeal());
         } else {
-            MealFavourite mealFavorite = new MealFavourite();
-            mealFavorite.idMeal = meal.getIdMeal();
-            mealFavorite.strMeal = meal.getStrMeal();
-            mealFavorite.strMealThumb = meal.getStrMealThumb();
-            repository.insert(mealFavorite);
+            MealFavourite mealFavourite = new MealFavourite();
+            mealFavourite.idMeal = meal.getIdMeal();
+            mealFavourite.strMeal = meal.getStrMeal();
+            mealFavourite.strMealThumb = meal.getStrMealThumb();
+            repository.insert(mealFavourite);
         }
 
-        setFavoriteItem();
+        setFavouriteItem();
 
     }
 
-    private boolean isFavorite() {
-        return repository.isFavorite(strMealName);
+    private boolean isFavourite() {
+        return repository.isFavourite(strMealName);
     }
 
-    private void setFavoriteItem() {
-        if (isFavorite()) {
-            favoriteItem.setIcon(getResources().getDrawable(R.drawable.ic_favourite));
+    private void setFavouriteItem() {
+        if (isFavourite()) {
+            favouriteItem.setIcon(getResources().getDrawable(R.drawable.ic_favourite));
         } else {
-            favoriteItem.setIcon(getResources().getDrawable(R.drawable.ic_favourite_border));
+            favouriteItem.setIcon(getResources().getDrawable(R.drawable.ic_favourite_border));
         }
     }
 
@@ -325,29 +326,5 @@ public class DetailActivity extends AppCompatActivity{
     @Override
     public void onErrorLoading(String message) {
         Utils.showDialogMessage(this, "Error", message);
-    }
-
-    @Override
-    public void onBackPressed() {
-        if (mInterstitialAd.isLoaded()) {
-            mInterstitialAd.show();
-        } else {
-            finish();
-            Log.d("TAG", "The interstitial wasn't loaded yet.");
-        }
-
-        mInterstitialAd.setAdListener(new AdListener() {
-            @Override
-            public void onAdClosed() {
-                final Handler handler = new Handler();
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        supportFinishAfterTransition();
-                    }
-                }, 200);
-            }
-        });
-        super.onBackPressed();
     }
 }

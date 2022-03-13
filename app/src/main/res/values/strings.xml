@@ -13,12 +13,13 @@
     <string name="email">Email</string>
     <string name="search_your_recipes">Search Your Recipes…</string>
     <string name="meal_categories">Meal Categories</string>
-    <string name="interstitial_video_ads_id">ca-app-pub-7622707640153634/9554126783</string>
+    <string name="interstitial_video_ads_id">ca-app-pub-7442278714381165/8368408599</string>
     <string name="dot_loading">...</string>
     <string name="country">Country</string>
     <string name="instructions">INSTRUCTIONS</string>
     <string name="Ingredients">INGREDIENTS</string>
     <string name="source">INGREDIENTS</string>
-    <string name="banner_ads_id">Banner Ads </string>
-    <string name="interstitial_ads_id" />
+    <string name="banner_ads_id">ca-app-pub-7442278714381165/8368408599</string>
+    <string name="interstitial_ads_id">ca-app-pub-7442278714381165/8368408599</string>
+    <string name="favourite">Favourite</string>
 </resources>

@@ -43,19 +43,14 @@ public class AppPresenter {
 
         view.showLoading();
 
-        Call<AppData> categoriesCall = Utils.getApi().getCategories();
+        Call<Categories> categoriesCall = Utils.getApi().getCategories();
         categoriesCall.enqueue(new Callback<Categories>() {
             @Override
-            public void onResponse(@NonNull Call<Categories> call,
-                                   @NonNull Response<Categories> response) {
-
+            public void onResponse(@NonNull Call<Categories> call,@NonNull Response<Categories> response) {
                 view.hideLoading();
                 if (response.isSuccessful() && response.body() != null) {
-
                     view.setCategory(response.body().getCategories());
-
-                }
-                else {
+                }else {
                     view.onErrorLoading(response.message());
                 }
             }

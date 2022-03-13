@@ -1,14 +1,14 @@
 package com.example.mpishi.Home;
 
 import android.content.Context;
-import android.sax.RootElement;
 
 import androidx.room.Database;
 import androidx.room.Room;
+import androidx.room.RoomDatabase;
 
 @Database(entities = {MealFavourite.class}, version = 1, exportSchema = false)
-public class FavouriteDB extends RootDatabase {
-    public abstract FavouriteDAO favoriteDAO();
+public abstract class FavouriteDB extends RoomDatabase {
+    public abstract FavouriteDAO favouriteDAO();
 
     private static FavouriteDB INSTANCE;
 
@@ -16,7 +16,7 @@ public class FavouriteDB extends RootDatabase {
         if (INSTANCE == null) {
             synchronized (FavouriteDB.class) {
                 if (INSTANCE == null) {
-                    INSTANCE = Room.databaseBuilder(context, FavouriteDB.class, "favorite.db")
+                    INSTANCE = Room.databaseBuilder(context, FavouriteDB.class, "favourite.db")
                             .allowMainThreadQueries()
                             .build();
                 }

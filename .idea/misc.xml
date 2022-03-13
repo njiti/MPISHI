@@ -18,6 +18,7 @@
         <entry key="..\:/Users/asus/Desktop/Mobile Development Full app/MPISHI2/app/src/main/res/drawable/ic_launcher_background.xml" value="0.169" />
         <entry key="..\:/Users/asus/Desktop/Mobile Development Full app/MPISHI2/app/src/main/res/drawable/ic_link.xml" value="0.2075" />
         <entry key="..\:/Users/asus/Desktop/Mobile Development Full app/MPISHI2/app/src/main/res/drawable/ic_play.xml" value="0.2075" />
+        <entry key="..\:/Users/asus/Desktop/Mobile Development Full app/MPISHI2/app/src/main/res/drawable/ic_search_primary_light.xml" value="0.1" />
         <entry key="..\:/Users/asus/Desktop/Mobile Development Full app/MPISHI2/app/src/main/res/drawable/sample_image_category.xml" value="0.1555" />
         <entry key="..\:/Users/asus/Desktop/Mobile Development Full app/MPISHI2/app/src/main/res/drawable/sample_image_meal.xml" value="0.169" />
         <entry key="..\:/Users/asus/Desktop/Mobile Development Full app/MPISHI2/app/src/main/res/drawable/shadow_bottom_to_top.xml" value="0.169" />
@@ -26,7 +27,7 @@
         <entry key="..\:/Users/asus/Desktop/Mobile Development Full app/MPISHI2/app/src/main/res/layout/activity_detail.xml" value="0.22" />
         <entry key="..\:/Users/asus/Desktop/Mobile Development Full app/MPISHI2/app/src/main/res/layout/activity_favourite.xml" value="0.20364583333333333" />
         <entry key="..\:/Users/asus/Desktop/Mobile Development Full app/MPISHI2/app/src/main/res/layout/activity_funny.xml" value="0.125" />
-        <entry key="..\:/Users/asus/Desktop/Mobile Development Full app/MPISHI2/app/src/main/res/layout/activity_home.xml" value="0.11851851851851852" />
+        <entry key="..\:/Users/asus/Desktop/Mobile Development Full app/MPISHI2/app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="..\:/Users/asus/Desktop/Mobile Development Full app/MPISHI2/app/src/main/res/layout/activity_landing.xml" value="0.16" />
         <entry key="..\:/Users/asus/Desktop/Mobile Development Full app/MPISHI2/app/src/main/res/layout/activity_main.xml" value="0.14545454545454545" />
         <entry key="..\:/Users/asus/Desktop/Mobile Development Full app/MPISHI2/app/src/main/res/layout/activity_short.xml" value="0.125" />
@@ -37,7 +38,7 @@
         <entry key="..\:/Users/asus/Desktop/Mobile Development Full app/MPISHI2/app/src/main/res/layout/item_recycler_category.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/asus/Desktop/Mobile Development Full app/MPISHI2/app/src/main/res/layout/item_recycler_category_shimmer.xml" value="0.14883720930232558" />
         <entry key="..\:/Users/asus/Desktop/Mobile Development Full app/MPISHI2/app/src/main/res/layout/item_recycler_meal.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/asus/Desktop/Mobile Development Full app/MPISHI2/app/src/main/res/layout/item_view_pager_header.xml" value="0.15165876777251186" />
+        <entry key="..\:/Users/asus/Desktop/Mobile Development Full app/MPISHI2/app/src/main/res/layout/item_view_pager_header.xml" value="0.33" />
         <entry key="..\:/Users/asus/Desktop/Mobile Development Full app/MPISHI2/app/src/main/res/layout/item_view_pager_header_shimmmer.xml" value="0.20364583333333333" />
         <entry key="..\:/Users/asus/Desktop/Mobile Development Full app/MPISHI2/app/src/main/res/layout/search.xml" value="0.20364583333333333" />
         <entry key="..\:/Users/asus/Desktop/Mobile Development Full app/MPISHI2/app/src/main/res/menu/menu.xml" value="0.20416666666666666" />

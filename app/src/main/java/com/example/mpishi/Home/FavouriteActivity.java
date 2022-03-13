@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import static com.example.mpishi.Home.HomeActivity.EXTRA_DETAIL;
 
 import com.example.mpishi.R;
 
@@ -43,7 +44,7 @@ public class FavouriteActivity extends AppCompatActivity {
 
     }
 
-    void getFavoriteList() {
+    void getFavouriteList() {
         repository = new FavouriteRepository(getApplication());
         RecyclerViewMealFavorite adapter = new RecyclerViewMealFavorite(this, repository.select(), repository);
         recyclerView.setAdapter(adapter);
@@ -69,6 +70,6 @@ public class FavouriteActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        getFavoriteList();
+        getFavouriteList();
     }
 }

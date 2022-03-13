@@ -5,21 +5,19 @@ import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
-import com.example.mpishi.Home.MealFavourite;
-
 import java.util.List;
 
 @Dao
-public class FavouriteDAO {
+public interface FavouriteDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     long insert(MealFavourite meal);
 
-    @Query("SELECT * FROM favorite")
+    @Query("SELECT * FROM favourite")
     List<MealFavourite> select();
 
-    @Query("DELETE FROM favorite WHERE strMeal = :name")
+    @Query("DELETE FROM favourite WHERE strMeal = :name")
     void delete(String name);
 
-    @Query("SELECT * FROM favorite WHERE strMeal = :name")
+    @Query("SELECT * FROM favourite WHERE strMeal = :name")
     boolean isFavorite(String name);
 }

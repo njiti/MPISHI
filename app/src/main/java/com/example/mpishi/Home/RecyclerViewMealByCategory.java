@@ -113,6 +113,6 @@ public class RecyclerViewMealByCategory  extends RecyclerView.Adapter<RecyclerVi
     }
 
     private boolean isFavorite(String strMealName) {
-        return repository.isFavorite(strMealName);
+        return repository.isFavourite(strMealName);
     }
 }

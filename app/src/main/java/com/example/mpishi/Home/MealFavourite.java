@@ -1,11 +1,11 @@
 package com.example.mpishi.Home;
 
-import android.support.annotation.NonNull;
 
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "favorite")
+@Entity(tableName = "favourite")
 public class MealFavourite {
     @PrimaryKey
     @NonNull

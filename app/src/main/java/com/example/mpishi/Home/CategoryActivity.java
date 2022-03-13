@@ -3,14 +3,15 @@ package com.example.mpishi.Home;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Toolbar;
-
-import com.android.car.ui.toolbar.TabLayout;
-import com.example.mpishi.R;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
+import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
+
+
+
+import com.example.mpishi.R;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.List;
 
@@ -46,7 +47,7 @@ public class CategoryActivity extends AppCompatActivity {
                 getSupportFragmentManager(),
                  categories);
         viewPager.setAdapter(adapter);
-        tabLayout.setupWithViewPage(viewPager);
+        tabLayout.setupWithViewPager(viewPager);
         viewPager.setCurrentItem(position, true);
         adapter.notifyDataSetChanged();
     }

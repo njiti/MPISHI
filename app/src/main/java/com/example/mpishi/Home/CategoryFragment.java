@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import static com.example.mpishi.Home.HomeActivity.EXTRA_DETAIL;
 
 import com.example.mpishi.R;
 
@@ -70,11 +71,6 @@ public class CategoryFragment extends Fragment implements CategoryView {
             CategoryPresenter presenter = new CategoryPresenter(this);
             presenter.getMealByCategory(getArguments().getString("EXTRA_DATA_NAME"));
         }
-
-        MobileAds.initialize(getActivity().getApplicationContext(), getResources().getString(R.string.banner_ads_id));
-
-        AdRequest adRequest = new AdRequest.Builder().build();
-        adView.loadAd(adRequest);
     }
 
     @Override
@@ -90,7 +86,7 @@ public class CategoryFragment extends Fragment implements CategoryView {
     @Override
     public void setMeals(List<AppData.Meal> meals) {
         RecyclerViewMealByCategory adapter =
-                new RecyclerViewMealByCategory(getActivity(), meals);
+                new RecyclerViewMealByCategory(getActivity(), meals, repository);
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
         recyclerView.setClipToPadding(false);
         recyclerView.setAdapter(adapter);

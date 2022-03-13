@@ -24,7 +24,7 @@ public class FavouriteRepository {
         return favouriteDAO.select();
     }
 
-    public boolean isFavorite(String name) {
+    public boolean isFavourite(String name) {
         return favouriteDAO.isFavorite(name);
     }
 }
