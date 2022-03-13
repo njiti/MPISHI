@@ -2,7 +2,7 @@
 
 This is an app aimed at helping people with step to step preparation of meals
 
-https://resources.workable.com/wp-content/uploads/2017/07/shutterstock_149437304.jpg
+![a chef cooking!](https://resources.workable.com/wp-content/uploads/2017/07/shutterstock_149437304.jpg)
 
 ## Getting Started
 
