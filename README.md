@@ -28,7 +28,7 @@ fork project and start it there
 ```
 Android Studion: https://developer.android.com/studio
 ```
-
+![Intelli J Download!](https://static.javatpoint.com/tutorial/kafka/images/installing-intellij-idea.png)
 or download the intellij IDE, and add the app development dependency
 
 ```
