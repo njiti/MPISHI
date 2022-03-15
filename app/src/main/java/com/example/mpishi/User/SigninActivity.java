@@ -1,14 +1,14 @@
 package com.example.mpishi.User;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.mpishi.LandingActivity;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.mpishi.Home.HomeActivity;
 import com.example.mpishi.R;
 import com.google.android.material.button.MaterialButton;
 
@@ -47,7 +47,7 @@ public class SigninActivity extends AppCompatActivity {
             public void onClick(View v){
                 if(username.getText().toString().equals("admin") && password.getText().toString().equals("admin")){
                     //correct
-                    startActivity(new Intent(SigninActivity.this, LandingActivity.class));
+                    startActivity(new Intent(SigninActivity.this, HomeActivity.class));
                 }else{
                     //incorrect
                     Toast.makeText(SigninActivity.this,"LOGIN FAILED !!!",Toast.LENGTH_LONG).show();

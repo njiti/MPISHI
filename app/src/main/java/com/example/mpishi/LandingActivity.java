@@ -6,6 +6,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.mpishi.User.SigninActivity;
 import com.google.android.material.button.MaterialButton;
 
 public class LandingActivity extends AppCompatActivity {
@@ -19,7 +20,7 @@ public class LandingActivity extends AppCompatActivity {
         loginbtn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
-                startActivity(new Intent(LandingActivity.this,LandingActivity.class));
+                startActivity(new Intent(LandingActivity.this, SigninActivity.class));
             }
         });
     }

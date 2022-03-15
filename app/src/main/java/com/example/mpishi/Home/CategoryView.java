@@ -1,7 +1,5 @@
 package com.example.mpishi.Home;
 
-import com.example.mpishi.Home.AppData;
-
 import java.util.List;
 
 public interface CategoryView {

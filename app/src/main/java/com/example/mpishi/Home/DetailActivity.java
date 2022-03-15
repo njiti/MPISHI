@@ -19,7 +19,6 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.ViewCompat;
 
 import com.example.mpishi.R;
-import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.squareup.picasso.Picasso;
@@ -69,7 +68,6 @@ public class DetailActivity extends AppCompatActivity implements DetailView{
     MenuItem favouriteItem;
     String strMealName;
 
-    private InterstitialAd mInterstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

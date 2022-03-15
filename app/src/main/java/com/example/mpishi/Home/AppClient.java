@@ -8,9 +8,10 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+
 public class AppClient {
 
-    public static final String BASEURL = "www.themealdb.com/api/json/v1/1/";
+    public static final String BASEURL = "https://www.themealdb.com/api/json/v1/1/";
 
     public static Retrofit getAppClient(){
         return new Retrofit.Builder().baseUrl(BASEURL)

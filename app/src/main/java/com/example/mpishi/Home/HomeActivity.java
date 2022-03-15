@@ -2,8 +2,6 @@ package com.example.mpishi.Home;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -14,11 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.mpishi.R;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.interstitial.InterstitialAd;
-
 
 import java.io.Serializable;
 import java.util.List;
@@ -34,15 +27,12 @@ public class HomeActivity extends AppCompatActivity implements AppView {
     public static final String EXTRA_POSITION = "position";
     public static final String EXTRA_DETAIL = "detail";
 
-    private InterstitialAd mInterstitialAd;
 
     @BindView(R.id.viewPagerHeader) ViewPager viewPagerAppData;
     @BindView(R.id.recyclerCategory) RecyclerView recyclerViewCategory;
     @BindView(R.id.favorite) ImageView favorite;
 
     AppPresenter presenter;
-
-    private AdView adView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -55,13 +45,8 @@ public class HomeActivity extends AppCompatActivity implements AppView {
         });
 
         presenter = new AppPresenter(this);
-        presenter.getAppData();
+        //presenter.getAppData();
         presenter.getCategories();
-
-        adView = findViewById(R.id.adView);
-
-        AdRequest adRequest = new AdRequest.Builder().build();
-        adView.loadAd(adRequest);
     }
 
     @Override

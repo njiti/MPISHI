@@ -12,18 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MPISHI">
         <activity
-            android:name=".LandingActivity"
-            android:exported="true" />
+            android:name=".User.SignupActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".User.SigninActivity"
+            android:exported="true"/>
         <activity
             android:name=".Home.HomeActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true"/>
         <activity
             android:name=".Home.CategoryActivity"
             android:theme="@style/AppTheme"
@@ -36,6 +32,16 @@
             android:name=".Home.FavouriteActivity"
             android:theme="@style/AppTheme"
             android:label="Favorite"/>
+            <activity
+                android:name=".LandingActivity"
+                android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-7622707640153634~8677495206"/>
