@@ -31,7 +31,7 @@
                     android:layout_alignParentBottom="true"
                     android:layout_width="match_parent"
                     android:layout_height="10dp"
-                    android:background="#DFDFDF" />
+                    android:background="@color/black" />
                 <View
                     android:layout_marginBottom="15dp"
                     android:layout_marginLeft="15dp"

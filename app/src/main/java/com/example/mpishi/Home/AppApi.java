@@ -12,8 +12,12 @@ public interface AppApi {
     Call<Categories> getCategories();
 
     @GET("filter.php")
+    Call<AppData> getMealCategory(@Query("c") String category);
+
+    @GET("filter.php")
     Call<AppData> getMealByCategory(@Query("c") String category);
 
     @GET("search.php")
     Call<AppData> getMealByName(@Query("s") String mealName);
+
 }

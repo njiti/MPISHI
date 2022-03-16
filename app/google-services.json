@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "101826070158",
+    "project_id": "mpishi-2d96f",
+    "storage_bucket": "mpishi-2d96f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:101826070158:android:4939dae01f84499fba2bdf",
+        "android_client_info": {
+          "package_name": "com.example.mpishi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "101826070158-earfaeem57gcv0flrldn4hr5ag7bleq3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAw3e2bYYA6r4J7AZcYUTMuDV-m64iKlOY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "101826070158-earfaeem57gcv0flrldn4hr5ag7bleq3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

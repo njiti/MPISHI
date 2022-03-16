@@ -69,7 +69,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_marginTop="15dp"
-                app:cardBackgroundColor="@color/orange"
+                app:cardBackgroundColor="@color/white"
                 app:cardCornerRadius="10dp"
                 app:cardElevation="0dp">
                 <TextView
@@ -94,7 +94,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="150dp" />
 
-            <include android:id="@+id/shimmerMeal"
+            <include
+                android:id="@+id/shimmerMeal"
                 layout="@layout/item_view_pager_header_shimmmer" />
 
             <TextView
@@ -113,7 +114,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerCategory"
                 android:scrollbars="none"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="210dp"
                 android:clipToPadding="false"
                 android:layout_below="@id/titleCategory"
                 android:layout_width="match_parent"
@@ -121,21 +122,22 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp" />
 
-            <include android:id="@+id/shimmerCategory"
+            <include
+                android:id="@+id/shimmerCategory"
                 layout="@layout/item_recycler_category_shimmer" />
 
             <com.google.android.gms.ads.AdView
-                xmlns:ads="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/adView"
-                android:layout_below="@id/recyclerCategory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_below="@id/recyclerCategory"
+                android:layout_alignParentBottom="true"
                 android:layout_marginStart="16sp"
+                android:layout_marginTop="40dp"
                 android:layout_marginEnd="16sp"
                 android:layout_marginBottom="160dp"
-                ads:adSize="SMART_BANNER"
-                ads:adUnitId="Adds Banner"/>
+                app:adSize="SMART_BANNER"
+                app:adUnitId="Adds Banner" />
 
         </RelativeLayout>
     </androidx.core.widget.NestedScrollView>
