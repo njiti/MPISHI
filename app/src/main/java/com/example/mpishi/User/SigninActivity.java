@@ -1,17 +1,22 @@
 package com.example.mpishi.User;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
+import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mpishi.Home.HomeActivity;
 import com.example.mpishi.R;
+import com.example.mpishi.Tutorials.ShortActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
@@ -24,87 +29,76 @@ import com.google.firebase.auth.FirebaseUser;
 public class SigninActivity extends AppCompatActivity {
 
     TextView textView;
+    EditText inusername,inpassword,inemail;
+    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+    ProgressDialog progressDialog;
+
+    FirebaseAuth mAuth;
+    FirebaseUser mUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
 
-       // private FirebaseAuth mAuth;
-// ...
-// Initialize Firebase Auth
-        //mAuth = FirebaseAuth.getInstance();
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        TextView username =(TextView) findViewById(R.id.username);
-        TextView password =(TextView) findViewById(R.id.password);
+        inemail=findViewById(R.id.inemail);
+        inpassword=findViewById(R.id.inpassword);
 
-
-        /*@Override
-        public void onStart() {
-            super.onStart();
-            /// Check if user is signed in (non-null) and update UI accordingly.
-            FirebaseUser currentUser = mAuth.getCurrentUser();
-            updateUI(currentUser);
-        }*/
+        progressDialog=new ProgressDialog(this);
+        mAuth=FirebaseAuth.getInstance();
         MaterialButton loginbtn = (MaterialButton ) findViewById(R.id.loginbtn);
+        mUser=mAuth.getCurrentUser();
 
-       /* mAuth.signInWithCustomToken(mCustomToken)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+        loginbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                performLogin();
+
+                textView=(TextView) findViewById(R.id.sighnup);
+                textView.setOnClickListener(new View.OnClickListener(){
                     @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d(TAG, "signInWithCustomToken:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(user);
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w(TAG, "signInWithCustomToken:failure", task.getException());
-                            Toast.makeText(CustomAuthActivity.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
-                            updateUI(null);
-                        }
+                    public void onClick(View v){
+                        Intent intent=new Intent(SigninActivity.this, SignupActivity.class);
+                        startActivity(intent);
                     }
-                });*/
+                });
+            }
+        });
+    }
+    private void performLogin() {
+        String email = inemail.getText().toString();
+        String password = inpassword.getText().toString();
 
-        //admin and admin
-        loginbtn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                if(username.getText().toString().equals("admin") && password.getText().toString().equals("admin")){
-                    //correct
-                    Toast.makeText(SigninActivity.this,"LOGIN SUCCESSFUL",Toast.LENGTH_LONG).show();
-                }else{
-                    //incorrect
-                    Toast.makeText(SigninActivity.this,"LOGIN FAILED !!!",Toast.LENGTH_LONG).show();
+        if (!email.matches(emailPattern)) {
+            inemail.setError("Enter Correct Email");
+        } else if (password.isEmpty() || inpassword.length() < 6) {
+            inpassword.setError("Enter Proper Password, not less than 6 characters");
+        }else {
+            progressDialog.setMessage("Please wait While SignIn...");
+            progressDialog.setTitle("Sign In");
+            progressDialog.setCanceledOnTouchOutside(false);
+            progressDialog.show();
+
+            mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()){
+                        progressDialog.dismiss();
+                        sendUserToNextActivity();
+                        Toast.makeText(SigninActivity.this, "LogIn Successful", Toast.LENGTH_SHORT).show();
+                    }else {
+                        progressDialog.dismiss();
+                        Toast.makeText(SigninActivity.this, ""+task.getException(), Toast.LENGTH_LONG).show();
+                    }
                 }
-            }
-        });
-
-        loginbtn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                if(username.getText().toString().equals("admin") && password.getText().toString().equals("admin")){
-                    //correct
-                    startActivity(new Intent(SigninActivity.this, HomeActivity.class));
-                }else{
-                    //incorrect
-                    Toast.makeText(SigninActivity.this,"LOGIN FAILED !!!",Toast.LENGTH_LONG).show();
-                }
-            }
-        });
-
-        textView=(TextView) findViewById(R.id.sighnup);
-        textView.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                Intent intent=new Intent(SigninActivity.this, SignupActivity.class);
-                startActivity(intent);
-
-                Toast.makeText(SigninActivity.this, "start today", Toast.LENGTH_LONG).show();
-            }
-        });
-
-
+            });
+        }
+    }
+    private void sendUserToNextActivity(){
+        Intent intent=new Intent(SigninActivity.this, HomeActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 }
