@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity">
     <ImageView
         android:id="@+id/imageView2"
@@ -13,6 +14,16 @@
         android:src="@drawable/pizza"
         tools:layout_editor_absoluteX="-16dp"
         tools:layout_editor_absoluteY="-48dp" />
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_above="@+id/signin"
+        app:lottie_enableMergePathsForKitKatAndAbove="true"
+        app:lottie_fileName="login.json"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,7 +36,7 @@
         android:gravity="center"
         />
     <EditText
-        android:id="@+id/Email"
+        android:id="@+id/inputEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/signin"
@@ -42,27 +53,10 @@
         android:textColorHint="#757575" />
 
     <EditText
-        android:id="@+id/username"
+        android:id="@+id/inputpassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/Email"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        android:background="#fff"
-        android:drawableLeft="@drawable/ic_baseline_person_outline_24"
-        android:drawablePadding="20dp"
-        android:hint="@string/username"
-        android:padding="20dp"
-        android:textColor="#DCDCDC"
-        android:textColorHint="#757575" />
-
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/username"
+        android:layout_below="@id/inputEmail"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
@@ -76,10 +70,10 @@
         android:textColor="#DCDCDC"
         android:textColorHint="#757575" />
     <EditText
-        android:id="@+id/password2"
+        android:id="@+id/inputpassword2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/password"
+        android:layout_below="@id/inputpassword"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
@@ -97,7 +91,7 @@
         android:id="@+id/loginbtn2"
         android:layout_width="212dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/password2"
+        android:layout_below="@id/inputpassword2"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
