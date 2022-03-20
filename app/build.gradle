@@ -88,5 +88,7 @@ dependencies {
 
     //animations
     implementation "com.airbnb.android:lottie:3.4.0"
+    //database
+    implementation 'com.google.firebase:firebase-database'
 
 }

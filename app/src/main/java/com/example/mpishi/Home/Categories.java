@@ -7,6 +7,7 @@ import java.io.Serializable;
 import java.util.List;
 
 public class Categories implements Serializable {
+
     @SerializedName("categories")
     @Expose
     private List<Category> categories;
@@ -67,4 +68,5 @@ public class Categories implements Serializable {
         }
 
     }
+
 }

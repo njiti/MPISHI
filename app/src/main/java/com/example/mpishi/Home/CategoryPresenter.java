@@ -12,11 +12,11 @@ public class CategoryPresenter {
     public CategoryPresenter(CategoryView view) {
         this.view = view;
     }
-
     void getMealByCategory(String category) {
 
         view.showLoading();
-        Call<AppData> mealsCall = Utils.getApi().getMealByCategory(category);
+        Call<AppData> mealsCall = Utils.getApi().getMealCategory(category);
+        //Call<AppData> mealsCall = Utils.getApi().getMealByCategory(category);
         mealsCall.enqueue(new Callback<AppData>() {
             @Override
             public void onResponse(@NonNull Call<AppData> call,@NonNull Response<AppData> response) {

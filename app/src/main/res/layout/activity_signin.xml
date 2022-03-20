@@ -14,16 +14,6 @@
         android:src="@drawable/mshikaki"
         tools:layout_editor_absoluteX="-16dp"
         tools:layout_editor_absoluteY="-48dp" />
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/animationView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:layout_above="@+id/signin"
-        app:lottie_enableMergePathsForKitKatAndAbove="true"
-        app:lottie_fileName="login.json"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
